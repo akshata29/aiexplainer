@@ -1,0 +1,1976 @@
+{
+ "generated": "2026-11-04",
+ "sections": {
+  "1": {
+   "title": "Foundry overview",
+   "blurb": "The platform at a glance: every capability, the resource model, how Foundry evolved and where to start."
+  },
+  "2": {
+   "title": "Feature deep dives",
+   "blurb": "Agent Service, models, Toolbox and MCP, observability, tracing, guardrails, control plane and cost - in detail."
+  },
+  "3": {
+   "title": "Reference architectures",
+   "blurb": "Common scenarios and the Azure landing zone, drawn end to end."
+  },
+  "4": {
+   "title": "BCDR and resiliency",
+   "blurb": "High availability, regional failover, Agent Service disaster recovery and runbooks."
+  },
+  "5": {
+   "title": "Authentication and authorization",
+   "blurb": "Identity types, RBAC roles, agent identity, delegation, network and data protection."
+  },
+  "6": {
+   "title": "AI Ops",
+   "blurb": "AgentOps: lifecycle, CI/CD, monitoring, FinOps and capacity operations."
+  },
+  "7": {
+   "title": "Surrounding services",
+   "blurb": "AI Search, Cosmos DB, the IQ layer and the Azure services Foundry plugs into."
+  },
+  "8": {
+   "title": "Under the hood",
+   "blurb": "How Agent Service, hosted agents, model serving, retrieval and safety work internally."
+  }
+ },
+ "diagrams": [
+  {
+   "id": "foundry-overview",
+   "title": "Microsoft Foundry platform overview",
+   "section": "1",
+   "group": "Overview",
+   "order": 1,
+   "description": "The front-page map of Microsoft Foundry as an AI factory (Build, Evaluate, Deploy, Operate, Govern): every capability family as icon tiles with preview and retirement badges, the platform spine, foundation rails, a runtime request path, the deprecation clock, plus Why Foundry? and How to choose.",
+   "tags": [
+    "overview",
+    "platform",
+    "capabilities",
+    "ai-factory",
+    "agents",
+    "models"
+   ],
+   "file": "foundry-overview.excalidraw",
+   "width": 3560,
+   "height": 7318,
+   "elements": 1867,
+   "preview": "previews/foundry-overview.png"
+  },
+  {
+   "id": "capability-atlas",
+   "title": "Foundry capability atlas (part 1)",
+   "section": "1",
+   "group": "Overview",
+   "order": 2,
+   "description": "The exhaustive inventory, part 1 of 2: build surfaces, models, agents, tools, knowledge and observability - every capability with its GA/preview status, one-line purpose and a clickable Learn link.",
+   "tags": [
+    "atlas",
+    "capabilities",
+    "inventory",
+    "status",
+    "learn-links"
+   ],
+   "file": "capability-atlas.excalidraw",
+   "width": 3260,
+   "height": 4177,
+   "elements": 1183,
+   "preview": "previews/capability-atlas.png"
+  },
+  {
+   "id": "capability-atlas-part-2",
+   "title": "Foundry capability atlas (part 2)",
+   "section": "1",
+   "group": "Overview",
+   "order": 2.5,
+   "description": "The exhaustive inventory, part 2 of 2: evaluation, trust and safety, governance, APIs and SDKs and Foundry Tools - with the GA / preview / retiring status wall and the status-drift notes.",
+   "tags": [
+    "atlas",
+    "capabilities",
+    "inventory",
+    "governance",
+    "status"
+   ],
+   "file": "capability-atlas-part-2.excalidraw",
+   "width": 3260,
+   "height": 3424,
+   "elements": 796,
+   "preview": "previews/capability-atlas-part-2.png"
+  },
+  {
+   "id": "where-to-start",
+   "title": "Where to start with Microsoft Foundry",
+   "section": "1",
+   "group": "Overview",
+   "order": 3,
+   "description": "Start with your goal: a decision tree from 'I want to...' to the right first page, the declarative -> full-code spectrum (model call, prompt agent, hosted agent), the five-step path for new developers and a persona -> entry-point map.",
+   "tags": [
+    "getting-started",
+    "decision-tree",
+    "prompt-agent",
+    "hosted-agent",
+    "personas"
+   ],
+   "file": "where-to-start.excalidraw",
+   "width": 3000,
+   "height": 6708,
+   "elements": 744,
+   "preview": "previews/where-to-start.png"
+  },
+  {
+   "id": "resource-model",
+   "title": "Foundry resource model",
+   "section": "1",
+   "order": 4,
+   "group": "Overview",
+   "description": "Foundry resource -> projects -> deployments, connections and connected Azure services; control vs data plane; storage, networking, encryption and data residency.",
+   "tags": [
+    "architecture",
+    "resource",
+    "project",
+    "rbac",
+    "networking"
+   ],
+   "file": "resource-model.excalidraw",
+   "width": 2700,
+   "height": 2629,
+   "elements": 362,
+   "preview": "previews/resource-model.png"
+  },
+  {
+   "id": "evolution-classic-to-new",
+   "title": "From Azure AI Studio to Microsoft Foundry",
+   "section": "1",
+   "group": "Overview",
+   "order": 5,
+   "description": "Why there are two portals, two SDK majors and two agent APIs: the Azure AI Studio -> Azure AI Foundry -> Microsoft Foundry timeline, previous-vs-current mapping, Assistants -> Responses, the deprecation clock and what's new.",
+   "tags": [
+    "evolution",
+    "classic",
+    "timeline",
+    "responses-api",
+    "deprecations"
+   ],
+   "file": "evolution-classic-to-new.excalidraw",
+   "width": 3000,
+   "height": 4605,
+   "elements": 713,
+   "preview": "previews/evolution-classic-to-new.png"
+  },
+  {
+   "id": "evolution-classic-to-new-part-2",
+   "title": "Classic to new: the migration playbook",
+   "section": "1",
+   "group": "Overview",
+   "order": 5.5,
+   "description": "A decision tree and five swim-arrow migration paths (Azure OpenAI upgrade incl. auto-upgrade, hub to Foundry project, Assistants to agents, Agent Applications, GitHub Models), what stays classic-only, the portal map and agent tool availability.",
+   "tags": [
+    "migration",
+    "upgrade",
+    "hub",
+    "assistants",
+    "agent-applications"
+   ],
+   "file": "evolution-classic-to-new-part-2.excalidraw",
+   "width": 3000,
+   "height": 5884,
+   "elements": 888,
+   "preview": "previews/evolution-classic-to-new-part-2.png"
+  },
+  {
+   "id": "developer-surfaces",
+   "title": "Ways to build on Microsoft Foundry",
+   "section": "1",
+   "group": "Overview",
+   "order": 6,
+   "description": "Every way in: portal and playgrounds, SDKs, REST, azd, VS Code, Canvas, coding agents and MCP, LangChain and IaC drawn as one layered picture (surface -> SDK or API -> endpoint -> Foundry), with a surface x persona matrix, endpoints and authentication per surface.",
+   "tags": [
+    "sdk",
+    "endpoints",
+    "azd",
+    "mcp",
+    "authentication",
+    "personas"
+   ],
+   "file": "developer-surfaces.excalidraw",
+   "width": 3000,
+   "height": 5578,
+   "elements": 743,
+   "preview": "previews/developer-surfaces.png"
+  },
+  {
+   "id": "developer-surfaces-part-2",
+   "title": "Developer surfaces in detail",
+   "section": "1",
+   "group": "Overview",
+   "order": 6.5,
+   "description": "Each way in, in detail: portal and playgrounds, VS Code Foundry Toolkit, Canvas, azd ai extensions and the DevPack, REST v1 and ARM, the Foundry Skill and all 79 Foundry MCP Server tools, LangChain, templates and samples.",
+   "tags": [
+    "azd",
+    "mcp-server",
+    "rest",
+    "vscode",
+    "templates",
+    "devpack"
+   ],
+   "file": "developer-surfaces-part-2.excalidraw",
+   "width": 3000,
+   "height": 7188,
+   "elements": 1133,
+   "preview": "previews/developer-surfaces-part-2.png"
+  },
+  {
+   "id": "agent-service-overview",
+   "title": "Foundry Agent Service: the map",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 10,
+   "description": "What Foundry Agent Service is: the five REST agent kinds and a decision flow, the request path, the Responses-based object model vs classic Assistants, what the service manages for you, key numbers and the retirement dates.",
+   "tags": [
+    "agent-service",
+    "agents",
+    "responses-api",
+    "object-model",
+    "overview"
+   ],
+   "file": "agent-service-overview.excalidraw",
+   "width": 3000,
+   "height": 7306,
+   "elements": 962,
+   "preview": "previews/agent-service-overview.png"
+  },
+  {
+   "id": "agent-service-overview-part-2",
+   "title": "Agent Service: setup, limits, regions and Azure Government",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 10.5,
+   "description": "Agent Service reference sheet: Basic vs Standard vs Standard + BYO VNet, where state lives, capability hosts and settings, every limit and error code, 30 regions, hosted-session quotas and the Azure Government matrix.",
+   "tags": [
+    "agent-service",
+    "setup",
+    "limits",
+    "regions",
+    "azure-government"
+   ],
+   "file": "agent-service-overview-part-2.excalidraw",
+   "width": 3000,
+   "height": 5819,
+   "elements": 730,
+   "preview": "previews/agent-service-overview-part-2.png"
+  },
+  {
+   "id": "prompt-agents",
+   "title": "Prompt agents in depth",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 11,
+   "description": "Prompt agents: what is inside an immutable version, the request flow with numbered steps, connected models and the router, structured inputs, the stable agent endpoint, protocols and Entra-only authorization.",
+   "tags": [
+    "prompt-agents",
+    "agent-endpoint",
+    "versions",
+    "structured-inputs",
+    "authorization"
+   ],
+   "file": "prompt-agents.excalidraw",
+   "width": 3000,
+   "height": 6138,
+   "elements": 928,
+   "preview": "previews/prompt-agents.png"
+  },
+  {
+   "id": "prompt-agents-part-2",
+   "title": "Prompt agents: harness, A2A, routines and migration",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 11.5,
+   "description": "Prompt agents, part 2: the Microsoft Copilot harness (preview) with its tools and rules, incoming A2A (preview), routines (preview), legacy Agent applications, optimizer pointers, and migrating from or disabling classic agents.",
+   "tags": [
+    "prompt-agents",
+    "copilot-harness",
+    "a2a",
+    "routines",
+    "migration"
+   ],
+   "file": "prompt-agents-part-2.excalidraw",
+   "width": 3000,
+   "height": 5930,
+   "elements": 610,
+   "preview": "previews/prompt-agents-part-2.png"
+  },
+  {
+   "id": "hosted-agents",
+   "title": "Hosted agents: your code on Foundry's runtime",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 12,
+   "description": "Hosted agents in depth (concepts): when to pick them over prompt agents, framework choice, the port-8088 runtime contract and protocols, per-session sandboxes, isolation keys, agent identity and the token service, models and Toolbox, scale and regions.",
+   "tags": [
+    "hosted-agents",
+    "sessions",
+    "protocols",
+    "identity",
+    "sandbox",
+    "scale"
+   ],
+   "file": "hosted-agents.excalidraw",
+   "width": 3600,
+   "height": 8306,
+   "elements": 1278,
+   "preview": "previews/hosted-agents.png"
+  },
+  {
+   "id": "hosted-agents-operations",
+   "title": "Hosted agents: deploy and operate",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 12.5,
+   "description": "Hosted agents in operation: seven deploy paths, versions and safe rollout, CI/CD, logs and debugging, guardrails (preview) and long-running resilient agents (preview) - crash recovery, steering, cancel, human-in-the-loop, stream reconnect and the durable state store.",
+   "tags": [
+    "hosted-agents",
+    "deploy",
+    "azd",
+    "versions",
+    "cicd",
+    "long-running"
+   ],
+   "file": "hosted-agents-operations.excalidraw",
+   "width": 3600,
+   "height": 7858,
+   "elements": 1273,
+   "preview": "previews/hosted-agents-operations.png"
+  },
+  {
+   "id": "workflows-multi-agent",
+   "title": "Workflows, routines, A2A and multi-agent orchestration",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 13,
+   "description": "The orchestration map: declarative workflows (retiring 2026-12-01) and where they go, the five Microsoft Agent Framework patterns drawn as topologies, A2A, Responses multi-agent and routines side by side, plus human-in-the-loop.",
+   "tags": [
+    "workflows",
+    "multi-agent",
+    "agent-framework",
+    "orchestration",
+    "a2a",
+    "routines"
+   ],
+   "file": "workflows-multi-agent.excalidraw",
+   "width": 3600,
+   "height": 6858,
+   "elements": 1078,
+   "preview": "previews/workflows-multi-agent.png"
+  },
+  {
+   "id": "workflows-multi-agent-part-2",
+   "title": "Multi-agent orchestration in depth: A2A, Responses and routines",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 13.5,
+   "description": "A2A in depth (outbound tool call sequence, incoming endpoint, six authentication methods), Responses API multi-agent orchestration (Preview), routines (Preview) and Microsoft Foundry Canvas.",
+   "tags": [
+    "a2a",
+    "multi-agent",
+    "responses-api",
+    "routines",
+    "authentication",
+    "canvas"
+   ],
+   "file": "workflows-multi-agent-part-2.excalidraw",
+   "width": 3600,
+   "height": 6391,
+   "elements": 907,
+   "preview": "previews/workflows-multi-agent-part-2.png"
+  },
+  {
+   "id": "memory",
+   "title": "Foundry Memory (Preview): long-term memory for agents",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 14,
+   "description": "Foundry Memory (Preview): memory stores, scopes, the extract-consolidate-retrieve lifecycle, memory types, how prompt, hosted and LangChain agents use it, short-term state vs the durable state store, quotas, privacy and docs conflicts.",
+   "tags": [
+    "memory",
+    "memory-store",
+    "scope",
+    "long-term-memory",
+    "hosted-agents",
+    "privacy"
+   ],
+   "file": "memory.excalidraw",
+   "width": 3600,
+   "height": 6919,
+   "elements": 967,
+   "preview": "previews/memory.png"
+  },
+  {
+   "id": "voice-agents",
+   "title": "Voice agents (Preview): architecture, definition and telephony",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 15,
+   "description": "Voice-based prompt agents (Preview): native speech-to-speech vs cascaded pipelines, managed vs self-deployed models, every setting of the voice agent definition, the WebSocket session and the telephony path (Teams Phone, Twilio, Direct SIP).",
+   "tags": [
+    "voice",
+    "voice-live",
+    "speech-to-speech",
+    "telephony",
+    "websocket",
+    "preview"
+   ],
+   "file": "voice-agents.excalidraw",
+   "width": 3600,
+   "height": 6770,
+   "elements": 975,
+   "preview": "previews/voice-agents.png"
+  },
+  {
+   "id": "voice-agents-part-2",
+   "title": "Voice agents: hosted voice, operate and migrate",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 15.5,
+   "description": "Voice agents part 2 (Preview): hosted voice (conversation engine and invocations_ws), best practices, tracing and evaluation, pricing and limits, migrating from Voice Live with a text agent, and the docs conflicts (Direct SIP, GA vs preview).",
+   "tags": [
+    "voice",
+    "hosted-agents",
+    "observability",
+    "pricing",
+    "migration",
+    "best-practices"
+   ],
+   "file": "voice-agents-part-2.excalidraw",
+   "width": 3600,
+   "height": 7314,
+   "elements": 931,
+   "preview": "previews/voice-agents-part-2.png"
+  },
+  {
+   "id": "publish-and-channels",
+   "title": "Publishing and channels: endpoint, Microsoft 365, Teams and identity",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 16,
+   "description": "How an agent becomes reachable and shareable: the stable endpoint and its authorization schemes, the channel map, Entra agent identity, publishing to Microsoft 365 Copilot and Teams (sequence, scopes, private-network option, authorization fixes), incoming A2A, telephony and the publishing REST operations.",
+   "tags": [
+    "publish",
+    "agent-endpoint",
+    "microsoft-365",
+    "teams",
+    "authorization",
+    "entra-agent-id",
+    "rest"
+   ],
+   "file": "publish-and-channels.excalidraw",
+   "width": 3600,
+   "height": 8124,
+   "elements": 1161,
+   "preview": "previews/publish-and-channels.png"
+  },
+  {
+   "id": "publish-and-channels-part-2",
+   "title": "Agent 365 and autopilots: identity-based digital coworkers",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 16.5,
+   "description": "Microsoft Agent 365 registry sync and telemetry, and autopilots - an identity, not a capability: one blueprint to many hired instances, the eight-stage lifecycle across four roles, onboarding and operating an instance, and the first-autopilot quickstart (25-seat preview).",
+   "tags": [
+    "agent-365",
+    "autopilot",
+    "blueprint",
+    "agent-user",
+    "entra-agent-id",
+    "lifecycle"
+   ],
+   "file": "publish-and-channels-part-2.excalidraw",
+   "width": 3600,
+   "height": 6714,
+   "elements": 732,
+   "preview": "previews/publish-and-channels-part-2.png"
+  },
+  {
+   "id": "agent-lifecycle-optimizer",
+   "title": "Agent lifecycle and the optimizer: build, test, ship, improve",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 17,
+   "description": "The agent development lifecycle as a loop (build, test, trace, evaluate, optimize, publish, monitor), the local toolbelt (azd, Agent Inspector, agent doctor), evaluation hooks, the agent optimizer (Preview) at a glance, release promotion and a what-to-use-when table.",
+   "tags": [
+    "agent-lifecycle",
+    "azd",
+    "agent-inspector",
+    "evaluation",
+    "agent-optimizer",
+    "ci-cd"
+   ],
+   "file": "agent-lifecycle-optimizer.excalidraw",
+   "width": 3600,
+   "height": 6322,
+   "elements": 850,
+   "preview": "previews/agent-lifecycle-optimizer.png"
+  },
+  {
+   "id": "agent-lifecycle-optimizer-part-2",
+   "title": "The agent optimizer in depth: files, datasets, runs, costs and the Prompt Optimizer",
+   "section": "2",
+   "group": "Agent Service",
+   "order": 17.5,
+   "description": "The agent optimizer (Preview) in depth: prompt-agent wizard vs hosted azd path, optimizer-ready files, datasets and evaluators, run, apply and deploy, REST, cost estimates and token usage, the separate Prompt Optimizer and the hosted-agent CI/CD template.",
+   "tags": [
+    "agent-optimizer",
+    "prompt-optimizer",
+    "datasets",
+    "eval-yaml",
+    "token-usage",
+    "ci-cd"
+   ],
+   "file": "agent-lifecycle-optimizer-part-2.excalidraw",
+   "width": 3600,
+   "height": 6973,
+   "elements": 777,
+   "preview": "previews/agent-lifecycle-optimizer-part-2.png"
+  },
+  {
+   "id": "model-catalog",
+   "title": "Foundry Models catalog",
+   "section": "2",
+   "group": "Models",
+   "order": 20,
+   "description": "The Foundry Models catalog as a two-wing mall: sold by Azure vs partners and community - who sells, supports and bills (Claude is the special case), provider shelves with real model names, endpoints, discovery and compare tools, Hugging Face and Fireworks routes.",
+   "tags": [
+    "catalog",
+    "sold-by-azure",
+    "partners",
+    "marketplace",
+    "huggingface",
+    "fireworks"
+   ],
+   "file": "model-catalog.excalidraw",
+   "width": 3200,
+   "height": 6344,
+   "elements": 1387,
+   "preview": "previews/model-catalog.png"
+  },
+  {
+   "id": "deployment-types",
+   "title": "Deployment types and offers",
+   "section": "2",
+   "group": "Models",
+   "order": 21,
+   "description": "Every way to run a Foundry model: the 3x3 serverless grid (Global, Data Zone, geography x Standard, Provisioned, Batch), Developer, Flex and Priority request-level tiers, managed compute, instant access, partner serverless and model router - with data-processing location, billing meter, SLA, limits and a 'which lane?' decision tree.",
+   "tags": [
+    "deployment-types",
+    "global-standard",
+    "provisioned",
+    "batch",
+    "flex",
+    "priority",
+    "data-zone"
+   ],
+   "file": "deployment-types.excalidraw",
+   "width": 3080,
+   "height": 5872,
+   "elements": 701,
+   "preview": "previews/deployment-types.png"
+  },
+  {
+   "id": "deployment-types-part-2",
+   "title": "Deployment types: the lanes in detail",
+   "section": "2",
+   "group": "Models",
+   "order": 21.5,
+   "description": "Part 2 of the deployment-types map: Flex and Priority request-level tiers, Batch jobs and limits, managed compute and LoRA adapters (preview), instant access (preview), partner serverless, model router, version upgrades per type, Azure Government, Azure Policy and how to create a deployment.",
+   "tags": [
+    "flex",
+    "priority",
+    "batch",
+    "managed-compute",
+    "instant-access",
+    "azure-government",
+    "lifecycle"
+   ],
+   "file": "deployment-types-part-2.excalidraw",
+   "width": 3080,
+   "height": 6750,
+   "elements": 748,
+   "preview": "previews/deployment-types-part-2.png"
+  },
+  {
+   "id": "ptu-and-quota",
+   "title": "PTU and quota",
+   "section": "2",
+   "group": "Models",
+   "order": 22,
+   "description": "Quota (granted TPM/RPM pools, subscription-level since May 2026, Free and Tier 1-6) versus provisioned throughput (reserved PTUs): sizing, billing and reservations, 429s, spillover, operations and monitoring.",
+   "tags": [
+    "ptu",
+    "quota",
+    "provisioned-throughput",
+    "spillover",
+    "capacity"
+   ],
+   "file": "ptu-and-quota.excalidraw",
+   "width": 3250,
+   "height": 8122,
+   "elements": 1298,
+   "preview": "previews/ptu-and-quota.png"
+  },
+  {
+   "id": "model-router-lifecycle",
+   "title": "Model router: one deployment, many models",
+   "section": "2",
+   "group": "Models",
+   "order": 23,
+   "description": "How the model router works - trained router, Cost / Balanced / Quality modes, model subset, failover, session affinity, agents and Responses API, policy governance, monitoring and evaluation (versions and lifecycle continue in part 2).",
+   "tags": [
+    "model router",
+    "routing",
+    "failover",
+    "subset",
+    "policy",
+    "models"
+   ],
+   "file": "model-router-lifecycle.excalidraw",
+   "width": 3000,
+   "height": 5678,
+   "elements": 908,
+   "preview": "previews/model-router-lifecycle.png"
+  },
+  {
+   "id": "model-router-lifecycle-part-2",
+   "title": "Model versions, lifecycle and the retirement cliff",
+   "section": "2",
+   "group": "Models",
+   "order": 23.5,
+   "description": "How model versions age in Foundry: versionUpgradeOption, who is auto-upgraded, the 18- and 12-month lifecycle clocks, preview rules, the Nov 2026 retirement cliff, migration phases, notifications, the Models API and benchmarks.",
+   "tags": [
+    "model lifecycle",
+    "retirement",
+    "versions",
+    "migration",
+    "models api",
+    "benchmarks"
+   ],
+   "file": "model-router-lifecycle-part-2.excalidraw",
+   "width": 3000,
+   "height": 6508,
+   "elements": 949,
+   "preview": "previews/model-router-lifecycle-part-2.png"
+  },
+  {
+   "id": "fine-tuning",
+   "title": "Fine-tuning: from data to a deployed model",
+   "section": "2",
+   "group": "Models",
+   "order": 24,
+   "description": "End-to-end fine-tuning pipeline with quality gates: Managed vs Programmed Training, SFT/DPO/RFT, training types, supported models, hosting, cost management and safety evaluation.",
+   "tags": [
+    "fine-tuning",
+    "sft",
+    "dpo",
+    "rft",
+    "lora",
+    "models"
+   ],
+   "file": "fine-tuning.excalidraw",
+   "width": 3000,
+   "height": 8126,
+   "elements": 1470,
+   "preview": "previews/fine-tuning.png"
+  },
+  {
+   "id": "model-apis-capabilities",
+   "title": "Model APIs and capabilities: the surface map",
+   "section": "2",
+   "group": "Models",
+   "order": 25,
+   "description": "One Foundry endpoint, four districts: the Responses API and its tool belt, Chat Completions, the Decisions API, reasoning, structured outputs and caching - with an endpoint address book (media, voice, MAI and Claude continue in part 2).",
+   "tags": [
+    "responses api",
+    "tools",
+    "decisions api",
+    "reasoning",
+    "endpoints",
+    "models"
+   ],
+   "file": "model-apis-capabilities.excalidraw",
+   "width": 3000,
+   "height": 7058,
+   "elements": 897,
+   "preview": "previews/model-apis-capabilities.png"
+  },
+  {
+   "id": "model-apis-capabilities-part-2",
+   "title": "Media, voice, MAI models and Claude on Foundry",
+   "section": "2",
+   "group": "Models",
+   "order": 25.5,
+   "description": "The rest of the capability map: image and video generation, embeddings, audio, Realtime and GPT-Live voice, the Microsoft AI (MAI) models, Claude hosted on Azure or on Anthropic, coding agents and webhooks.",
+   "tags": [
+    "realtime",
+    "gpt-live",
+    "mai",
+    "claude",
+    "images",
+    "webhooks"
+   ],
+   "file": "model-apis-capabilities-part-2.excalidraw",
+   "width": 3000,
+   "height": 6658,
+   "elements": 830,
+   "preview": "previews/model-apis-capabilities-part-2.png"
+  },
+  {
+   "id": "toolbox",
+   "title": "Foundry Toolbox",
+   "section": "2",
+   "group": "Tools and MCP",
+   "order": 30,
+   "description": "Toolbox: one versioned, governed MCP endpoint in front of 13 tool types - architecture, versions and promotion, tool search, private catalogs, guardrails, identity, network isolation and the end-to-end flow.",
+   "tags": [
+    "toolbox",
+    "mcp",
+    "tools",
+    "versioning",
+    "tool-search",
+    "governance"
+   ],
+   "file": "toolbox.excalidraw",
+   "width": 3000,
+   "height": 10766,
+   "elements": 1553,
+   "preview": "previews/toolbox.png"
+  },
+  {
+   "id": "tool-catalog",
+   "title": "Tool catalog",
+   "section": "2",
+   "group": "Tools and MCP",
+   "order": 31,
+   "description": "Every tool an agent can use: one comparison matrix of where it runs, auth, GA or preview, toolbox eligibility, network isolation, region/model limits and billing - plus a dispatch diagram and a decision tree.",
+   "tags": [
+    "tools",
+    "toolbox",
+    "mcp",
+    "catalog",
+    "matrix",
+    "agents"
+   ],
+   "file": "tool-catalog.excalidraw",
+   "width": 3300,
+   "height": 6832,
+   "elements": 1356,
+   "preview": "previews/tool-catalog.png"
+  },
+  {
+   "id": "mcp-catalog-and-servers",
+   "title": "MCP in Foundry: catalogs and servers",
+   "section": "2",
+   "group": "Tools and MCP",
+   "order": 32,
+   "description": "MCP in Foundry, part 1: one MCP tool and five kinds of MCP server (public Tools Catalog, managed servers on connector namespaces, private API Center catalog, servers you build, the Foundry MCP Server for coding agents), the tool's fields, approval flow and limits, the public catalog and managed MCP servers (preview).",
+   "tags": [
+    "mcp",
+    "tools-catalog",
+    "connector-namespace",
+    "approvals",
+    "allowed-tools",
+    "managed-mcp"
+   ],
+   "file": "mcp-catalog-and-servers.excalidraw",
+   "width": 3080,
+   "height": 5734,
+   "elements": 661,
+   "preview": "previews/mcp-catalog-and-servers.png"
+  },
+  {
+   "id": "mcp-catalog-and-servers-part-2",
+   "title": "MCP in Foundry: build, connect and govern",
+   "section": "2",
+   "group": "Tools and MCP",
+   "order": 32.5,
+   "description": "MCP in Foundry, part 2: the private API Center catalog (preview), building your own MCP server on Azure Functions or Container Apps, the Foundry MCP Server for coding agents (79 tools in 17 categories, preview), governing MCP with an AI gateway, other levers and transport details.",
+   "tags": [
+    "mcp",
+    "api-center",
+    "azure-functions",
+    "foundry-mcp-server",
+    "ai-gateway",
+    "governance"
+   ],
+   "file": "mcp-catalog-and-servers-part-2.excalidraw",
+   "width": 3080,
+   "height": 5415,
+   "elements": 634,
+   "preview": "previews/mcp-catalog-and-servers-part-2.png"
+  },
+  {
+   "id": "mcp-and-tool-authentication",
+   "title": "MCP and tool authentication",
+   "section": "2",
+   "group": "Tools and MCP",
+   "order": 33,
+   "description": "How agents authenticate to MCP servers, A2A agents and tools: every auth mode (none, key, project managed identity, agent identity, OAuth passthrough, UserEntraToken, AgentOnBehalfOfUser), who holds which token, consent, a decision table and gotchas.",
+   "tags": [
+    "mcp",
+    "authentication",
+    "oauth",
+    "entra",
+    "agent-identity",
+    "obo"
+   ],
+   "file": "mcp-and-tool-authentication.excalidraw",
+   "width": 3600,
+   "height": 10310,
+   "elements": 1638,
+   "preview": "previews/mcp-and-tool-authentication.png"
+  },
+  {
+   "id": "foundry-tools-and-ai-services",
+   "title": "Foundry Tools (formerly Azure AI services)",
+   "section": "2",
+   "group": "Tools and MCP",
+   "order": 34,
+   "description": "What Foundry Tools are, which resource kinds and endpoints back them, and which ones surface as agent tools (Speech and Language MCP, Translator via OpenAPI) versus resource-level or guardrail plumbing only.",
+   "tags": [
+    "foundry-tools",
+    "ai-services",
+    "speech",
+    "language",
+    "content-understanding",
+    "kinds"
+   ],
+   "file": "foundry-tools-and-ai-services.excalidraw",
+   "width": 3360,
+   "height": 6286,
+   "elements": 844,
+   "preview": "previews/foundry-tools-and-ai-services.png"
+  },
+  {
+   "id": "observability-overview",
+   "title": "Foundry Observability: one data model",
+   "section": "2",
+   "group": "Observability and safety",
+   "order": 40,
+   "description": "Trace, monitor, evaluate and optimize as one closed loop on an OpenTelemetry + Application Insights data spine - control-room surfaces, setup, roles and where every artifact is stored.",
+   "tags": [
+    "observability",
+    "monitoring",
+    "application insights",
+    "opentelemetry",
+    "evaluation"
+   ],
+   "file": "observability-overview.excalidraw",
+   "width": 3000,
+   "height": 6299,
+   "elements": 987,
+   "preview": "previews/observability-overview.png"
+  },
+  {
+   "id": "tracing",
+   "title": "Tracing: from agent run to the Traces UI",
+   "section": "2",
+   "group": "Observability and safety",
+   "order": 41,
+   "description": "Tracing in Foundry, part 1: the pipeline from an agent run through OpenTelemetry GenAI spans and Application Insights to the Foundry Traces UI, the span hierarchy and attributes, setup per agent kind and framework, and Entra authentication for trace ingestion.",
+   "tags": [
+    "tracing",
+    "opentelemetry",
+    "application-insights",
+    "spans",
+    "genai",
+    "entra"
+   ],
+   "file": "tracing.excalidraw",
+   "width": 3080,
+   "height": 5626,
+   "elements": 590,
+   "preview": "previews/tracing.png"
+  },
+  {
+   "id": "tracing-part-2",
+   "title": "Tracing: client-side, replay, datasets and privacy",
+   "section": "2",
+   "group": "Observability and safety",
+   "order": 41.5,
+   "description": "Tracing in Foundry, part 2: client-side tracing (preview), Trace Replay, traces to evaluation datasets, human annotations, restricting sensitive content in AppGenAIContent (the 2026-09-30 cut-over has passed), data handling and retention, and VS Code tracing.",
+   "tags": [
+    "tracing",
+    "trace-replay",
+    "datasets",
+    "annotations",
+    "sensitive-content",
+    "vs-code"
+   ],
+   "file": "tracing-part-2.excalidraw",
+   "width": 3080,
+   "height": 6028,
+   "elements": 600,
+   "preview": "previews/tracing-part-2.png"
+  },
+  {
+   "id": "evaluation",
+   "title": "Evaluation in depth",
+   "section": "2",
+   "group": "Observability and safety",
+   "order": 42,
+   "description": "The Foundry evaluation workbench: every built-in evaluator by family, datasets and simulation, run modes (portal, SDK, azd, CI/CD, continuous), results, limits and regions.",
+   "tags": [
+    "evaluation",
+    "evaluators",
+    "datasets",
+    "cloud-evaluation",
+    "ci-cd",
+    "red-teaming"
+   ],
+   "file": "evaluation.excalidraw",
+   "width": 3320,
+   "height": 11179,
+   "elements": 2045,
+   "preview": "previews/evaluation.png"
+  },
+  {
+   "id": "ai-red-teaming",
+   "title": "AI Red Teaming Agent",
+   "section": "2",
+   "group": "Observability and safety",
+   "order": 43,
+   "description": "How the AI Red Teaming Agent works: PyRIT attack strategies plus Foundry risk and safety evaluators produce an attack success rate scorecard - risk categories, agentic risks, cloud versus local runs, scheduling and limits.",
+   "tags": [
+    "red-teaming",
+    "pyrit",
+    "safety",
+    "evaluation",
+    "asr",
+    "agentic-risks"
+   ],
+   "file": "ai-red-teaming.excalidraw",
+   "width": 3369,
+   "height": 6431,
+   "elements": 901,
+   "preview": "previews/ai-red-teaming.png"
+  },
+  {
+   "id": "guardrails-and-controls",
+   "title": "Guardrails and controls",
+   "section": "2",
+   "group": "Observability and safety",
+   "order": 44,
+   "description": "Guardrails end to end: the four intervention points and which risk checks run where, layers that attach a policy, risk catalogue, hosted-agent, toolbox and control-plane guardrails, plus the Responsible AI wrapper.",
+   "tags": [
+    "guardrails",
+    "content-safety",
+    "prompt-shields",
+    "responsible-ai",
+    "hosted-agents"
+   ],
+   "file": "guardrails-and-controls.excalidraw",
+   "width": 3500,
+   "height": 6152,
+   "elements": 1149,
+   "preview": "previews/guardrails-and-controls.png"
+  },
+  {
+   "id": "control-plane",
+   "title": "Foundry Control Plane",
+   "section": "2",
+   "group": "Control plane and cost",
+   "order": 50,
+   "description": "One role-aware console for the agent fleet: four pillars, Operate and Manage panes, integrations with Defender, Purview, Entra Agent ID and Agent 365, lifecycle controls, token limits, guardrail policies, roles and who sees what.",
+   "tags": [
+    "control-plane",
+    "governance",
+    "agent-fleet",
+    "compliance",
+    "entra-agent-id",
+    "agent-365"
+   ],
+   "file": "control-plane.excalidraw",
+   "width": 3200,
+   "height": 6581,
+   "elements": 1017,
+   "preview": "previews/control-plane.png"
+  },
+  {
+   "id": "ai-gateway-and-token-limits",
+   "title": "AI gateway and token limits",
+   "section": "2",
+   "group": "Control plane and cost",
+   "order": 51,
+   "description": "The Foundry AI gateway (Azure API Management): how it is enabled and billed, the request flow, 429/403 token limits per project and deployment, MCP governance and bring-your-own-model.",
+   "tags": [
+    "ai gateway",
+    "api management",
+    "token limits",
+    "mcp governance",
+    "byom",
+    "quota"
+   ],
+   "file": "ai-gateway-and-token-limits.excalidraw",
+   "width": 3100,
+   "height": 6994,
+   "elements": 875,
+   "preview": "previews/ai-gateway-and-token-limits.png"
+  },
+  {
+   "id": "governance-policy-compliance",
+   "title": "Governance, policy and compliance",
+   "section": "2",
+   "group": "Control plane and cost",
+   "order": 52,
+   "description": "The governance stack in layers - tenant, management group and subscription, resource group, Foundry resource, project, deployment, agent - with Azure Policy built-ins, the deployment gate, preview suppression and the role that configures each control.",
+   "tags": [
+    "governance",
+    "azure-policy",
+    "rbac",
+    "compliance",
+    "preview-features",
+    "landing-zone"
+   ],
+   "file": "governance-policy-compliance.excalidraw",
+   "width": 3368,
+   "height": 7440,
+   "elements": 1193,
+   "preview": "previews/governance-policy-compliance.png"
+  },
+  {
+   "id": "governance-policy-compliance-part-2",
+   "title": "Governance, policy and compliance, part 2",
+   "section": "2",
+   "group": "Control plane and cost",
+   "order": 52.5,
+   "description": "The evidence plane for Foundry governance - diagnostic logging, Defender, Purview, Entra and Agent 365, Service Health and the consolidated view - plus data residency by deployment type, Azure Government availability and co-located versus isolated boundaries.",
+   "tags": [
+    "governance",
+    "compliance",
+    "diagnostic-logging",
+    "defender",
+    "purview",
+    "data-residency"
+   ],
+   "file": "governance-policy-compliance-part-2.excalidraw",
+   "width": 3368,
+   "height": 5922,
+   "elements": 756,
+   "preview": "previews/governance-policy-compliance-part-2.png"
+  },
+  {
+   "id": "cost-and-billing",
+   "title": "Microsoft Foundry Cost Structure",
+   "section": "2",
+   "group": "Control plane and cost",
+   "order": 53,
+   "description": "Every Foundry billing meter by area - models, fine-tuning, agents and tools, safety, observability, data - plus billing options, metering, cost scopes, views and the limits that throttle you.",
+   "tags": [
+    "cost",
+    "billing",
+    "finops",
+    "ptu",
+    "meters",
+    "budgets"
+   ],
+   "file": "cost-and-billing.excalidraw",
+   "width": 3555,
+   "height": 3552,
+   "elements": 764,
+   "preview": "previews/cost-and-billing.png"
+  },
+  {
+   "id": "cost-optimization",
+   "title": "Cost optimization: levers and decision flow",
+   "section": "2",
+   "group": "Control plane and cost",
+   "order": 54,
+   "description": "Pick your lane (router, Batch, Flex, Priority, PTU), set the guardrails, then pull the levers - caching, limits, hosting, evaluation, commitments - with savings, trade-offs and where to set each one.",
+   "tags": [
+    "cost",
+    "finops",
+    "ptu",
+    "prompt-caching",
+    "quota",
+    "decision-flow"
+   ],
+   "file": "cost-optimization.excalidraw",
+   "width": 3616,
+   "height": 7346,
+   "elements": 1297,
+   "preview": "previews/cost-optimization.png"
+  },
+  {
+   "id": "ra-basic-chat",
+   "title": "Basic chat reference architecture (learning / POC)",
+   "section": "3",
+   "order": 1,
+   "description": "The basic Foundry chat architecture redrawn: App Service + Easy Auth, a prompt agent with AI Search and web search grounding, numbered flow, RBAC wiring and what each Well-Architected pillar deliberately leaves out.",
+   "tags": [
+    "reference-architecture",
+    "chat",
+    "prompt-agent",
+    "app-service",
+    "well-architected"
+   ],
+   "file": "ra-basic-chat.excalidraw",
+   "width": 2640,
+   "height": 4019,
+   "elements": 484,
+   "preview": "previews/ra-basic-chat.png"
+  },
+  {
+   "id": "ra-baseline-network-isolated",
+   "title": "Baseline chat: network-isolated (private endpoints, WAF, standard setup)",
+   "section": "3",
+   "group": "Reference architectures",
+   "order": 2,
+   "description": "The production baseline for Foundry chat redrawn as a VNet map: Application Gateway + WAF, private endpoints, standard agent setup with your own Cosmos DB, Storage and AI Search, agent subnet injection, Azure Firewall egress, DNS zones, RBAC wiring and trade-offs.",
+   "tags": [
+    "reference-architecture",
+    "network-isolation",
+    "private-endpoint",
+    "standard-agent-setup",
+    "waf",
+    "azure-firewall"
+   ],
+   "file": "ra-baseline-network-isolated.excalidraw",
+   "width": 3202,
+   "height": 6942,
+   "elements": 988,
+   "preview": "previews/ra-baseline-network-isolated.png"
+  },
+  {
+   "id": "ra-baseline-network-isolated-part-2",
+   "title": "Baseline chat: decisions, operations and gotchas",
+   "section": "3",
+   "group": "Reference architectures",
+   "order": 2.5,
+   "description": "Part 2 of the network-isolated baseline: design decisions and trade-offs, which tools work behind the VNet, zone redundancy and disaster recovery, Well-Architected guidance and the production gotchas (WAF tuning, portal access, conversation isolation).",
+   "tags": [
+    "reference-architecture",
+    "well-architected",
+    "disaster-recovery",
+    "design-decisions",
+    "tools",
+    "gotchas"
+   ],
+   "file": "ra-baseline-network-isolated-part-2.excalidraw",
+   "width": 3200,
+   "height": 3833,
+   "elements": 439,
+   "preview": "previews/ra-baseline-network-isolated-part-2.png"
+  },
+  {
+   "id": "ra-landing-zone",
+   "title": "Foundry in an Azure landing zone",
+   "section": "3",
+   "order": 3,
+   "description": "Platform vs workload landing zones for Microsoft Foundry: management groups, the hub-spoke topology with numbered flows, who owns what, private DNS and egress control, and the Agent Service gotchas.",
+   "tags": [
+    "landing-zone",
+    "hub-spoke",
+    "private-dns",
+    "ownership",
+    "egress",
+    "agent-service"
+   ],
+   "file": "ra-landing-zone.excalidraw",
+   "width": 3600,
+   "height": 8250,
+   "elements": 1366,
+   "preview": "previews/ra-landing-zone.png"
+  },
+  {
+   "id": "ra-landing-zone-part-2",
+   "title": "Foundry in an Azure landing zone, part 2",
+   "section": "3",
+   "order": 3.5,
+   "description": "Foundry resource ownership models and the rollout path, Azure Policy guardrails and where they attach, subscription vending and CI/CD, the AI Landing Zones accelerators and Well-Architected notes.",
+   "tags": [
+    "landing-zone",
+    "ownership-models",
+    "policy",
+    "vending",
+    "ai-landing-zones",
+    "well-architected"
+   ],
+   "file": "ra-landing-zone-part-2.excalidraw",
+   "width": 3600,
+   "height": 8283,
+   "elements": 1161,
+   "preview": "previews/ra-landing-zone-part-2.png"
+  },
+  {
+   "id": "ra-enterprise-rag",
+   "title": "Enterprise RAG / knowledge-grounded agent",
+   "section": "3",
+   "order": 4,
+   "description": "Foundry IQ knowledge bases on Azure AI Search agentic retrieval: ask, plan, fan out, synthesize; ingestion, per-user security trimming, the private variant, retrieval options and RAG evaluation.",
+   "tags": [
+    "rag",
+    "foundry-iq",
+    "ai-search",
+    "agentic-retrieval",
+    "knowledge-base",
+    "security-trimming"
+   ],
+   "file": "ra-enterprise-rag.excalidraw",
+   "width": 3300,
+   "height": 8601,
+   "elements": 1265,
+   "preview": "previews/ra-enterprise-rag.png"
+  },
+  {
+   "id": "ra-multi-agent-platform",
+   "title": "Reference architecture: multi-agent platform",
+   "section": "3",
+   "order": 5,
+   "description": "Orchestrator and specialist agents on Foundry: the five orchestration patterns, A2A, MCP, Toolbox, memory, Entra agent identity, observability and CI/CD - with the Workflows retirement and the gotchas.",
+   "tags": [
+    "multi-agent",
+    "orchestration",
+    "a2a",
+    "mcp",
+    "toolbox",
+    "agent identity"
+   ],
+   "file": "ra-multi-agent-platform.excalidraw",
+   "width": 3400,
+   "height": 9543,
+   "elements": 1387,
+   "preview": "previews/ra-multi-agent-platform.png"
+  },
+  {
+   "id": "ra-m365-fabric-integration",
+   "title": "Microsoft 365, Fabric and event-driven integration",
+   "section": "3",
+   "group": "Reference architectures",
+   "order": 6,
+   "description": "Three islands and a bridge: publish a Foundry agent to Microsoft 365 Copilot and Teams (public, source-IP-filtered route for a private Foundry), Work IQ, SharePoint, Agent 365, Fabric IQ and the Fabric data agent deprecation - with the identity used on every hop and what stays private.",
+   "tags": [
+    "microsoft-365",
+    "teams",
+    "work-iq",
+    "fabric-iq",
+    "agent-365",
+    "identity"
+   ],
+   "file": "ra-m365-fabric-integration.excalidraw",
+   "width": 3300,
+   "height": 4820,
+   "elements": 689,
+   "preview": "previews/ra-m365-fabric-integration.png"
+  },
+  {
+   "id": "ra-m365-fabric-integration-part-2",
+   "title": "Microsoft 365, Fabric and event-driven integration: autopilots, routines and operations",
+   "section": "3",
+   "group": "Reference architectures",
+   "order": 6.5,
+   "description": "Part 2: the autopilot lifecycle as a four-lane swimlane, routines, the Azure Functions queue pattern, Logic Apps, which integrations survive network isolation, design decisions, gotchas and the documented Well-Architected guidance.",
+   "tags": [
+    "autopilot",
+    "agent-365",
+    "routines",
+    "logic-apps",
+    "azure-functions",
+    "network-isolation"
+   ],
+   "file": "ra-m365-fabric-integration-part-2.excalidraw",
+   "width": 3300,
+   "height": 5248,
+   "elements": 548,
+   "preview": "previews/ra-m365-fabric-integration-part-2.png"
+  },
+  {
+   "id": "ra-ai-gateway-pattern",
+   "title": "Hub AI gateway reference architecture",
+   "section": "3",
+   "group": "Reference architectures",
+   "order": 7,
+   "description": "Azure API Management as the hub AI gateway in front of Foundry models, MCP tools and agents: the eight-step policy pipeline with a numbered request flow, the four Architecture Center topologies, multi-region and per-boundary variants.",
+   "tags": [
+    "ai-gateway",
+    "api-management",
+    "token-limits",
+    "load-balancing",
+    "multi-region",
+    "circuit-breaker"
+   ],
+   "file": "ra-ai-gateway-pattern.excalidraw",
+   "width": 3200,
+   "height": 7626,
+   "elements": 1141,
+   "preview": "previews/ra-ai-gateway-pattern.png"
+  },
+  {
+   "id": "ra-ai-gateway-pattern-part-2",
+   "title": "Hub AI gateway reference architecture, part 2",
+   "section": "3",
+   "group": "Reference architectures",
+   "order": 7.5,
+   "description": "How Foundry plugs into the gateway (per-project token limits, MCP governance, bring your own model), MCP servers behind API Management, the Citadel Governance Hub with its contracts and network options, and the design decisions.",
+   "tags": [
+    "ai-gateway",
+    "mcp-governance",
+    "byom",
+    "citadel",
+    "contracts",
+    "design-decisions"
+   ],
+   "file": "ra-ai-gateway-pattern-part-2.excalidraw",
+   "width": 3200,
+   "height": 7005,
+   "elements": 939,
+   "preview": "previews/ra-ai-gateway-pattern-part-2.png"
+  },
+  {
+   "id": "bcdr-overview",
+   "title": "Foundry high availability and resiliency",
+   "section": "4",
+   "order": 1,
+   "description": "The layered resilience stack: what Microsoft builds in, what you own, availability zones, regional failure, deployment-type resiliency, SLAs and what you must replicate yourself.",
+   "tags": [
+    "bcdr",
+    "availability-zones",
+    "regional-failover",
+    "deployment-types",
+    "resiliency"
+   ],
+   "file": "bcdr-overview.excalidraw",
+   "width": 2800,
+   "height": 7806,
+   "elements": 870,
+   "preview": "previews/bcdr-overview.png"
+  },
+  {
+   "id": "bcdr-multi-region-patterns",
+   "title": "Multi-region patterns",
+   "section": "4",
+   "order": 2,
+   "description": "Region-pair topologies behind Front Door, Traffic Manager or API Management (active/active and active/passive), PTU-to-Standard spillover mechanics and quota planning across regions, drawn from the documented patterns.",
+   "tags": [
+    "bcdr",
+    "multi-region",
+    "spillover",
+    "quota",
+    "api-management",
+    "front-door"
+   ],
+   "file": "bcdr-multi-region-patterns.excalidraw",
+   "width": 3200,
+   "height": 7778,
+   "elements": 996,
+   "preview": "previews/bcdr-multi-region-patterns.png"
+  },
+  {
+   "id": "bcdr-multi-region-patterns-part-2",
+   "title": "Multi-region patterns, part 2",
+   "section": "4",
+   "order": 2.5,
+   "description": "Retry, backoff and circuit-breaker mechanics, health probes, three failure walk-throughs drawn as before/after topologies (regional model outage, PTU exhausted, dependency outage), agent-state consistency and rebuild with IaC.",
+   "tags": [
+    "bcdr",
+    "circuit-breaker",
+    "retry",
+    "failure-walkthrough",
+    "iac",
+    "agent-state"
+   ],
+   "file": "bcdr-multi-region-patterns-part-2.excalidraw",
+   "width": 3200,
+   "height": 7409,
+   "elements": 820,
+   "preview": "previews/bcdr-multi-region-patterns-part-2.png"
+  },
+  {
+   "id": "bcdr-agent-service",
+   "title": "Agent Service disaster recovery",
+   "section": "4",
+   "order": 3,
+   "description": "Standard-setup Agent Service DR from all three DR pages: where state lives, what Microsoft recovers vs what you rebuild, the platform-outage and resource/data-loss playbooks with documented RTO and recovery points.",
+   "tags": [
+    "bcdr",
+    "agent-service",
+    "disaster-recovery",
+    "cosmos-db",
+    "recovery",
+    "runbook"
+   ],
+   "file": "bcdr-agent-service.excalidraw",
+   "width": 2985,
+   "height": 8898,
+   "elements": 1280,
+   "preview": "previews/bcdr-agent-service.png"
+  },
+  {
+   "id": "bcdr-failure-modes-runbook",
+   "title": "Failure-mode matrix and runbook",
+   "section": "4",
+   "order": 4,
+   "description": "What breaks, how you see it, what you do and whose job recovery is: 32 failure modes across models, agents, state, edge, identity and tools, plus a 15-minute triage flow, the alert pack and a drill plan.",
+   "tags": [
+    "bcdr",
+    "runbook",
+    "failure-modes",
+    "triage",
+    "alerts",
+    "drills"
+   ],
+   "file": "bcdr-failure-modes-runbook.excalidraw",
+   "width": 2800,
+   "height": 8013,
+   "elements": 1085,
+   "preview": "previews/bcdr-failure-modes-runbook.png"
+  },
+  {
+   "id": "authn-authz-overview",
+   "title": "Authentication and authorization map",
+   "section": "5",
+   "order": 1,
+   "description": "Who proves what to whom: identity types, Entra ID vs API keys, token audiences, control vs data plane, connections and secrets, plus five numbered request-flow sequences.",
+   "tags": [
+    "authentication",
+    "entra",
+    "rbac",
+    "tokens",
+    "managed-identity",
+    "api-keys"
+   ],
+   "file": "authn-authz-overview.excalidraw",
+   "width": 3360,
+   "height": 7202,
+   "elements": 1124,
+   "preview": "previews/authn-authz-overview.png"
+  },
+  {
+   "id": "rbac-roles-and-scopes",
+   "title": "Foundry roles, scopes and least-privilege assignments",
+   "section": "5",
+   "order": 2,
+   "description": "Every built-in Foundry role and related role (control plane vs data plane), the scope ladder down to one agent, role-by-capability matrices, starter least-privilege assignments and the places where Learn pages disagree.",
+   "tags": [
+    "rbac",
+    "roles",
+    "scopes",
+    "least-privilege",
+    "foundry-user",
+    "agent-consumer"
+   ],
+   "file": "rbac-roles-and-scopes.excalidraw",
+   "width": 3360,
+   "height": 5828,
+   "elements": 1002,
+   "preview": "previews/rbac-roles-and-scopes.png"
+  },
+  {
+   "id": "rbac-roles-and-scopes-part-2",
+   "title": "Foundry roles, part 2: elevated tasks, feature roles and Azure Policy",
+   "section": "5",
+   "order": 2.5,
+   "description": "Which tasks force Owner or User Access Administrator, the roles the project managed identity holds on backing resources, extra roles per feature (evaluations, tracing, Agent 365, hosted agents, publishing), Azure Policy beside RBAC and a permission-error cheat sheet.",
+   "tags": [
+    "rbac",
+    "elevated-roles",
+    "managed-identity",
+    "azure-policy",
+    "least-privilege"
+   ],
+   "file": "rbac-roles-and-scopes-part-2.excalidraw",
+   "width": 3360,
+   "height": 5023,
+   "elements": 633,
+   "preview": "previews/rbac-roles-and-scopes-part-2.png"
+  },
+  {
+   "id": "agent-identity-and-delegation",
+   "title": "Agent identity and delegation",
+   "section": "5",
+   "order": 3,
+   "description": "Entra Agent ID (blueprint + per-agent identity), endpoint authorization schemes, user delegation and consent, the hosted-agent token service and per-user session isolation - who is the caller at each hop.",
+   "tags": [
+    "entra-agent-id",
+    "delegation",
+    "obo",
+    "consent",
+    "least-privilege"
+   ],
+   "file": "agent-identity-and-delegation.excalidraw",
+   "width": 3360,
+   "height": 6208,
+   "elements": 965,
+   "preview": "previews/agent-identity-and-delegation.png"
+  },
+  {
+   "id": "network-isolation",
+   "title": "Network isolation",
+   "section": "5",
+   "order": 4,
+   "description": "Inbound (public network access, private endpoints, private DNS), outbound (BYO VNet container injection vs managed VNet), Network Security Perimeter, on-premises access, tool support, subnet sizing and build order.",
+   "tags": [
+    "network",
+    "private-endpoint",
+    "vnet",
+    "managed-vnet",
+    "nsp",
+    "dns"
+   ],
+   "file": "network-isolation.excalidraw",
+   "width": 3398,
+   "height": 6124,
+   "elements": 984,
+   "preview": "previews/network-isolation.png"
+  },
+  {
+   "id": "data-protection-encryption",
+   "title": "Data protection and encryption: where your data lives",
+   "section": "5",
+   "order": 5,
+   "description": "A trust-boundary map of where prompts, agent state, traces and secrets live and who can see them, plus the data commitments, residency by deployment type, abuse monitoring, protected trace content and the Customer Copyright Commitment.",
+   "tags": [
+    "data-protection",
+    "residency",
+    "privacy",
+    "abuse-monitoring",
+    "encryption",
+    "copyright-commitment"
+   ],
+   "file": "data-protection-encryption.excalidraw",
+   "width": 3360,
+   "height": 7584,
+   "elements": 868,
+   "preview": "previews/data-protection-encryption.png"
+  },
+  {
+   "id": "data-protection-encryption-part-2",
+   "title": "Data protection, part 2: keys, secrets, storage and compliance",
+   "section": "5",
+   "order": 5.5,
+   "description": "Customer-managed keys end to end (prerequisites, enablement, rotation, revocation), Key Vault for connection secrets, managed vs your own storage, the security-baseline control families, Defender, Purview and Azure Government.",
+   "tags": [
+    "encryption",
+    "customer-managed-keys",
+    "key-vault",
+    "byo-storage",
+    "security-baseline",
+    "compliance"
+   ],
+   "file": "data-protection-encryption-part-2.excalidraw",
+   "width": 3360,
+   "height": 7086,
+   "elements": 1092,
+   "preview": "previews/data-protection-encryption-part-2.png"
+  },
+  {
+   "id": "agentops-lifecycle",
+   "title": "AgentOps lifecycle",
+   "section": "6",
+   "order": 1,
+   "description": "The end-to-end AgentOps loop on Foundry: plan, build, evaluate, deploy, operate, monitor, optimize - environments, versioning, gates, promotion and rollback, and who owns what.",
+   "tags": [
+    "agentops",
+    "lifecycle",
+    "environments",
+    "versioning",
+    "gates",
+    "raci"
+   ],
+   "file": "agentops-lifecycle.excalidraw",
+   "width": 3000,
+   "height": 6960,
+   "elements": 946,
+   "preview": "previews/agentops-lifecycle.png"
+  },
+  {
+   "id": "cicd-and-iac",
+   "title": "CI/CD and infrastructure as code",
+   "section": "6",
+   "order": 2,
+   "description": "A ten-station pipeline with platform, app and gate lanes; which API surface each artefact lives on; Bicep, Terraform and azd; evaluation gates, quota-aware deployment, ACR options and rollout.",
+   "tags": [
+    "cicd",
+    "iac",
+    "azd",
+    "bicep",
+    "terraform",
+    "gates"
+   ],
+   "file": "cicd-and-iac.excalidraw",
+   "width": 3100,
+   "height": 6681,
+   "elements": 927,
+   "preview": "previews/cicd-and-iac.png"
+  },
+  {
+   "id": "monitoring-alerting-incident",
+   "title": "Monitoring, alerting and incident response",
+   "section": "6",
+   "order": 3,
+   "description": "The five-ring signal map (resource vs project scope), model and agent metrics, alert catalogue, on-call flow and the trace-to-dataset feedback loop for operating Foundry workloads.",
+   "tags": [
+    "monitoring",
+    "alerting",
+    "incident",
+    "observability",
+    "app-insights",
+    "on-call"
+   ],
+   "file": "monitoring-alerting-incident.excalidraw",
+   "width": 3012,
+   "height": 6622,
+   "elements": 943,
+   "preview": "previews/monitoring-alerting-incident.png"
+  },
+  {
+   "id": "finops-capacity-ops",
+   "title": "FinOps, capacity and model-lifecycle operations",
+   "section": "6",
+   "order": 4,
+   "description": "The operating cadence for quota, PTU and reservations, token budgets, chargeback and cleanup - plus model retirement ops: the schedule watch, NoAutoUpgrade pitfalls and regression testing on upgrade.",
+   "tags": [
+    "finops",
+    "capacity",
+    "quota",
+    "ptu",
+    "cost",
+    "model-retirement"
+   ],
+   "file": "finops-capacity-ops.excalidraw",
+   "width": 3000,
+   "height": 7596,
+   "elements": 930,
+   "preview": "previews/finops-capacity-ops.png"
+  },
+  {
+   "id": "ai-assisted-ops",
+   "title": "AI-assisted operations",
+   "section": "6",
+   "order": 5,
+   "description": "Using AI to operate Foundry: the Foundry MCP Server (preview), Foundry Skill, azd ai agent doctor (not AI), Insights, Azure SRE Agent and Azure Copilot agents - what each can and cannot do, and what the docs do not say.",
+   "tags": [
+    "ai-ops",
+    "mcp",
+    "sre-agent",
+    "copilot",
+    "insights",
+    "agent-doctor"
+   ],
+   "file": "ai-assisted-ops.excalidraw",
+   "width": 2960,
+   "height": 7400,
+   "elements": 1172,
+   "preview": "previews/ai-assisted-ops.png"
+  },
+  {
+   "id": "ai-search",
+   "title": "Azure AI Search: the knowledge layer",
+   "section": "7",
+   "order": 1,
+   "description": "Foundry IQ knowledge bases on Azure AI Search: knowledge sources, agentic retrieval, classic indexes, the three ways agents use search content, identity, networking, trimming, tiers and billing.",
+   "tags": [
+    "ai-search",
+    "foundry-iq",
+    "agentic-retrieval",
+    "knowledge-base",
+    "rag"
+   ],
+   "file": "ai-search.excalidraw",
+   "width": 3360,
+   "height": 10457,
+   "elements": 1527,
+   "preview": "previews/ai-search.png"
+  },
+  {
+   "id": "cosmos-db",
+   "title": "Azure Cosmos DB in the Foundry ecosystem",
+   "section": "7",
+   "order": 2,
+   "description": "The standard agent setup's enterprise_memory database and containers, RBAC, private networking, what Foundry does not back up, plus Cosmos DB as agent memory, vector store, semantic cache, MCP tool and Fabric mirror source.",
+   "tags": [
+    "cosmos-db",
+    "agent-state",
+    "enterprise-memory",
+    "vector-search",
+    "mcp",
+    "disaster-recovery"
+   ],
+   "file": "cosmos-db.excalidraw",
+   "width": 3300,
+   "height": 7608,
+   "elements": 1023,
+   "preview": "previews/cosmos-db.png"
+  },
+  {
+   "id": "iq-layer",
+   "title": "Microsoft IQ: the enterprise-context layer",
+   "section": "7",
+   "order": 3,
+   "description": "Work IQ, Fabric IQ, Foundry IQ and Web IQ: what each provides, how it reaches a Foundry agent (tool, Toolbox or knowledge-base source), auth and trimming, prerequisites, network support and status.",
+   "tags": [
+    "iq",
+    "work-iq",
+    "fabric-iq",
+    "foundry-iq",
+    "web-iq",
+    "toolbox"
+   ],
+   "file": "iq-layer.excalidraw",
+   "width": 3548,
+   "height": 7003,
+   "elements": 1065,
+   "preview": "previews/iq-layer.png"
+  },
+  {
+   "id": "azure-services-map",
+   "title": "Azure and Microsoft services around Foundry",
+   "section": "7",
+   "order": 4,
+   "description": "Hub-and-spoke map of every Azure and Microsoft service that plugs into Foundry: the role it plays, which feature needs it, mandatory vs bring-your-own, and the connection, auth and network pattern.",
+   "tags": [
+    "services-map",
+    "byo",
+    "connections",
+    "private-networking",
+    "integrations",
+    "rbac"
+   ],
+   "file": "azure-services-map.excalidraw",
+   "width": 3300,
+   "height": 7974,
+   "elements": 1470,
+   "preview": "previews/azure-services-map.png"
+  },
+  {
+   "id": "hood-agent-service-architecture",
+   "title": "Agent Service architecture (the blueprint)",
+   "section": "8",
+   "order": 1,
+   "description": "Cut-away map of Foundry Agent Service: front door, control vs data plane, registry and versions, the runtime (prompt vs hosted path), state stores, tools, model gateway and the identity, guardrail and tracing hooks - with what the docs do not say drawn as grey question marks.",
+   "tags": [
+    "agent-service",
+    "architecture",
+    "control-plane",
+    "runtime",
+    "identity",
+    "state"
+   ],
+   "file": "hood-agent-service-architecture.excalidraw",
+   "width": 3330,
+   "height": 6453,
+   "elements": 1084,
+   "preview": "previews/hood-agent-service-architecture.png"
+  },
+  {
+   "id": "hood-hosted-agent-runtime",
+   "title": "Hosted agent runtime: how a container becomes an agent endpoint",
+   "section": "8",
+   "order": 2,
+   "description": "Cut-away of the per-session Micro VM sandbox and the platform layers around it - build and provision, runtime contract, session lifecycle, identity, egress proxy, networking and crash recovery - with documented, video/blog-only and not-documented facts drawn differently.",
+   "tags": [
+    "hosted-agents",
+    "microvm",
+    "sandbox",
+    "sessions",
+    "runtime",
+    "isolation"
+   ],
+   "file": "hood-hosted-agent-runtime.excalidraw",
+   "width": 3300,
+   "height": 5502,
+   "elements": 710,
+   "preview": "previews/hood-hosted-agent-runtime.png"
+  },
+  {
+   "id": "hood-request-lifecycle",
+   "title": "One Responses call, end to end",
+   "section": "8",
+   "order": 3,
+   "description": "A single Responses call followed hop by hop for a prompt agent and for a hosted agent: which component handles each step, which identity is on the wire, where the four guardrail gates sit, and what is persisted, streamed and traced.",
+   "tags": [
+    "responses api",
+    "request lifecycle",
+    "guardrails",
+    "identity",
+    "tracing"
+   ],
+   "file": "hood-request-lifecycle.excalidraw",
+   "width": 3300,
+   "height": 6390,
+   "elements": 844,
+   "preview": "previews/hood-request-lifecycle.png"
+  },
+  {
+   "id": "hood-request-lifecycle-part-2",
+   "title": "One Responses call, part 2: variants, limits and what nobody documents",
+   "section": "8",
+   "order": 3.5,
+   "description": "Four variants of the Responses call (client-side function, MCP approval, background and reconnect, Foundry IQ), the time and limit markers along the path, the things nobody documents and the docs that disagree.",
+   "tags": [
+    "responses api",
+    "approvals",
+    "limits",
+    "background mode",
+    "docs disagree"
+   ],
+   "file": "hood-request-lifecycle-part-2.excalidraw",
+   "width": 3300,
+   "height": 3074,
+   "elements": 391,
+   "preview": "previews/hood-request-lifecycle-part-2.png"
+  },
+  {
+   "id": "hood-model-serving",
+   "title": "Model serving internals",
+   "section": "8",
+   "order": 4,
+   "description": "How a model request is served as documented: Global / Data Zone / Regional routing, Standard TPM/RPM gate vs PTU leaky bucket, spillover, service tiers, prompt caching, model router and managed compute.",
+   "tags": [
+    "model serving",
+    "ptu",
+    "quota",
+    "spillover",
+    "model router"
+   ],
+   "file": "hood-model-serving.excalidraw",
+   "width": 2950,
+   "height": 4208,
+   "elements": 596,
+   "preview": "previews/hood-model-serving.png"
+  },
+  {
+   "id": "hood-agentic-retrieval",
+   "title": "Agentic retrieval and Foundry IQ: the pipeline under the hood",
+   "section": "8",
+   "order": 5,
+   "description": "One knowledge_base_retrieve call stage by stage - LLM query planning, parallel keyword/vector/hybrid subqueries, semantic reranking, merge, citations and answer synthesis - with reasoning-effort levels, knowledge-source types and ingestion, limits, and the GA (2026-04-01) vs preview (2026-08-01-preview) split.",
+   "tags": [
+    "agentic retrieval",
+    "foundry iq",
+    "azure ai search",
+    "knowledge base",
+    "reasoning effort",
+    "rag"
+   ],
+   "file": "hood-agentic-retrieval.excalidraw",
+   "width": 3170,
+   "height": 7960,
+   "elements": 1148,
+   "preview": "previews/hood-agentic-retrieval.png"
+  },
+  {
+   "id": "hood-networking-injection",
+   "title": "Networking internals: container injection and private paths",
+   "section": "8",
+   "order": 6,
+   "description": "Packet paths through Agent Service networking: container injection into your delegated subnet, private endpoints and DNS, managed VNet, and the hosted-agent egress proxy.",
+   "tags": [
+    "networking",
+    "vnet injection",
+    "private endpoint",
+    "dns",
+    "egress"
+   ],
+   "file": "hood-networking-injection.excalidraw",
+   "width": 3300,
+   "height": 6340,
+   "elements": 960,
+   "preview": "previews/hood-networking-injection.png"
+  },
+  {
+   "id": "hood-networking-injection-part-2",
+   "title": "Networking internals, part 2: subnet sizing, tool wires, firewall and gotchas",
+   "section": "8",
+   "order": 6.5,
+   "description": "Operator's sheet for a bring-your-own VNet: subnet rules and IP economics, which wire each tool uses when the project is isolated, the firewall allow-list by scenario, and where the sources disagree or stay silent.",
+   "tags": [
+    "networking",
+    "subnet sizing",
+    "firewall",
+    "tool support",
+    "gotchas"
+   ],
+   "file": "hood-networking-injection-part-2.excalidraw",
+   "width": 3300,
+   "height": 4170,
+   "elements": 454,
+   "preview": "previews/hood-networking-injection-part-2.png"
+  },
+  {
+   "id": "hood-safety-pipeline",
+   "title": "Safety pipeline: inline guardrails under the hood",
+   "section": "8",
+   "order": 7,
+   "description": "One agent turn through the four guardrail gates - Prompt Shields, harm classifiers, protected material, PII and task adherence - annotate vs block, default vs asynchronous streaming, and the hosted-agent traps: an inert invocations policy, a bad policy ID that fails open, bodies over 2 MB, and the agent guardrail that overrides the model's.",
+   "tags": [
+    "guardrails",
+    "content safety",
+    "prompt shields",
+    "hosted agents",
+    "egress",
+    "streaming"
+   ],
+   "file": "hood-safety-pipeline.excalidraw",
+   "width": 3165,
+   "height": 7108,
+   "elements": 1015,
+   "preview": "previews/hood-safety-pipeline.png"
+  },
+  {
+   "id": "hood-observability-pipeline",
+   "title": "Observability pipeline: telemetry under the hood",
+   "section": "8",
+   "order": 8,
+   "description": "How one agent run becomes a trace: who emits which spans (the Agent Service with the project managed identity, your sandbox code with the agent identity), Application Insights ingestion with Entra auth, the protected AppGenAIContent table, retention and data handling, and how the portal builds Traces, Monitor and evaluations.",
+   "tags": [
+    "observability",
+    "opentelemetry",
+    "application insights",
+    "tracing",
+    "hosted agents",
+    "appgenaicontent"
+   ],
+   "file": "hood-observability-pipeline.excalidraw",
+   "width": 3160,
+   "height": 6174,
+   "elements": 686,
+   "preview": "previews/hood-observability-pipeline.png"
+  },
+  {
+   "id": "hood-memory-internals",
+   "title": "Foundry Memory internals (preview)",
+   "section": "8",
+   "order": 9,
+   "description": "Under the hood of Foundry Memory (preview): the debounced write path (extract, consolidate), the scoped managed store, static and contextual retrieval, scopes and quotas, no VNet support and how prompt and hosted agents use it - with documented, video/blog-only and not-documented facts drawn differently.",
+   "tags": [
+    "memory",
+    "memory store",
+    "scope",
+    "consolidation",
+    "retrieval",
+    "preview"
+   ],
+   "file": "hood-memory-internals.excalidraw",
+   "width": 3250,
+   "height": 7928,
+   "elements": 981,
+   "preview": "previews/hood-memory-internals.png"
+  },
+  {
+   "id": "youtube-and-session-catalog",
+   "title": "Videos, sessions and blogs: the under-the-hood shelf",
+   "section": "8",
+   "order": 10,
+   "description": "A curated, link-checked shelf of 29 sources - 19 YouTube videos and sessions plus blogs, repos and Learn anchors - grouped by topic, with speaker, date, a short summary, the canvases each one informs and how far to trust it (as of 2026-11-03).",
+   "tags": [
+    "youtube",
+    "videos",
+    "sessions",
+    "blogs",
+    "catalog",
+    "reading list"
+   ],
+   "file": "youtube-and-session-catalog.excalidraw",
+   "width": 3250,
+   "height": 7942,
+   "elements": 1264,
+   "preview": "previews/youtube-and-session-catalog.png"
+  }
+ ]
+}

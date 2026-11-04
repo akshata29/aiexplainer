@@ -1,0 +1,43 @@
+# Dependencies and build output
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+# Vite leaves temporary config bundles behind when a build is killed
+*.timestamp-*.mjs
+
+# Local scratch from the render and QA tools (regenerated on demand)
+tools/export-dist/
+tools/export-dist-new/
+tools/export-dist-old/
+tools/.export-build.lock
+tools/.render.lock/
+tools/.link-cache.json
+diagrams/previews/work/
+diagrams/_*.excalidraw
+# tools/shot.mjs writes here when --out is not given
+/shot.png
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Logs and secrets
+*.log
+.env
+.env.*
+!.env.example
+
+# Editors and OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+desktop.ini
